@@ -1,0 +1,73 @@
+{
+  "common": {
+    "appName": "서류 검토 AI",
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다",
+    "retry": "다시 시도",
+    "cancel": "취소",
+    "save": "저장",
+    "delete": "삭제",
+    "download": "다운로드",
+    "logout": "로그아웃",
+    "back": "뒤로"
+  },
+  "auth": {
+    "login": "로그인",
+    "register": "회원가입",
+    "email": "이메일",
+    "password": "비밀번호",
+    "name": "이름",
+    "googleLogin": "Google로 로그인",
+    "noAccount": "계정이 없으신가요?",
+    "hasAccount": "이미 계정이 있으신가요?",
+    "registerLink": "회원가입",
+    "loginLink": "로그인"
+  },
+  "dashboard": {
+    "title": "검토 이력",
+    "newReview": "새 검토",
+    "noReviews": "아직 검토 이력이 없습니다",
+    "status": {
+      "pending": "대기",
+      "processing": "진행 중",
+      "completed": "완료",
+      "failed": "실패"
+    },
+    "columns": {
+      "id": "검토 ID",
+      "status": "상태",
+      "files": "파일 수",
+      "date": "날짜",
+      "cost": "비용"
+    }
+  },
+  "upload": {
+    "title": "새 검토",
+    "dropzone": "검토할 서류를 업로드하세요",
+    "dropzoneHint": "PDF, JPG, PNG 파일을 드래그하거나 클릭하여 선택",
+    "filesSelected": "{count}개 파일 선택됨",
+    "template": "규칙 템플릿 (선택)",
+    "templateNone": "기본 규칙 사용",
+    "startReview": "검토 시작",
+    "uploading": "업로드 중..."
+  },
+  "review": {
+    "processing": "{count}건 검토 진행 중...",
+    "phase1": "Phase 1: 전처리",
+    "phase2": "Phase 2: OCR + 검토",
+    "phase3": "Phase 3: 교차검증",
+    "completed": "검토가 완료되었습니다!",
+    "failed": "검토 실패",
+    "summary": "검토 결과 요약",
+    "passed": "통과",
+    "warnings": "주의",
+    "failures": "오류",
+    "documents": "문서별 상세",
+    "crossValidation": "교차검증",
+    "downloadJson": "JSON 다운로드",
+    "newReview": "새 검토 시작",
+    "cost": "비용",
+    "duration": "소요 시간",
+    "seconds": "초"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "common": {
+    "appName": "Document Review AI",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "download": "Download",
+    "logout": "Logout",
+    "back": "Back"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "googleLogin": "Sign in with Google",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "registerLink": "Register",
+    "loginLink": "Login"
+  },
+  "dashboard": {
+    "title": "Review History",
+    "newReview": "New Review",
+    "noReviews": "No reviews yet",
+    "status": {
+      "pending": "Pending",
+      "processing": "Processing",
+      "completed": "Completed",
+      "failed": "Failed"
+    },
+    "columns": {
+      "id": "Review ID",
+      "status": "Status",
+      "files": "Files",
+      "date": "Date",
+      "cost": "Cost"
+    }
+  },
+  "upload": {
+    "title": "New Review",
+    "dropzone": "Upload documents for review",
+    "dropzoneHint": "Drag and drop PDF, JPG, PNG files or click to browse",
+    "filesSelected": "{count} files selected",
+    "template": "Rule Template (optional)",
+    "templateNone": "Use default rules",
+    "startReview": "Start Review",
+    "uploading": "Uploading..."
+  },
+  "review": {
+    "processing": "Reviewing {count} documents...",
+    "phase1": "Phase 1: Preprocessing",
+    "phase2": "Phase 2: OCR + Review",
+    "phase3": "Phase 3: Cross-validation",
+    "completed": "Review completed!",
+    "failed": "Review failed",
+    "summary": "Review Summary",
+    "passed": "Passed",
+    "warnings": "Warnings",
+    "failures": "Failures",
+    "documents": "Document Details",
+    "crossValidation": "Cross-validation",
+    "downloadJson": "Download JSON",
+    "newReview": "Start New Review",
+    "cost": "Cost",
+    "duration": "Duration",
+    "seconds": "sec"
+  }
+}
