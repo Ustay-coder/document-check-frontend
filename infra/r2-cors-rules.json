@@ -1,0 +1,14 @@
+[
+  {
+    "AllowedOrigins": [
+      "https://document-check.vercel.app",
+      "https://frontend-six-rho-78.vercel.app",
+      "https://frontend-developerolims-projects.vercel.app",
+      "https://frontend-developerolim-6459-developerolims-projects.vercel.app",
+      "http://localhost:3000"
+    ],
+    "AllowedMethods": ["PUT", "GET", "HEAD"],
+    "AllowedHeaders": ["*"],
+    "MaxAgeSeconds": 86400
+  }
+]
