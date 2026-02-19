@@ -1,4 +1,4 @@
 export const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
-export const POLL_INTERVAL_MS = 2000;
+export const POLL_INTERVAL_MS = 3000;
