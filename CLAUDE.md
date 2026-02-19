@@ -1,5 +1,15 @@
 # Document Check Frontend
 
+## Specs
+
+개발 시 `specs/` 디렉토리의 문서들을 반드시 참조할 것:
+
+- `specs/PRD.md` — 제품 요구사항 정의서
+- `specs/PIPELINE-SPEC.md` — 문서 검토 파이프라인 스펙
+- `specs/API-SPEC.md` — API 스펙
+- `specs/DB-SPEC.md` — DB 스펙
+- `specs/UI-SPEC.md` — UI 스펙
+
 ## Tech Stack
 - Next.js 16 (App Router) + React 19
 - Tailwind CSS 4 + shadcn/ui
