@@ -97,6 +97,7 @@ export interface ReviewStatusResponse {
   result: ReviewResult | null;
   usage: Usage | null;
   error: string | null;
+  created_at: string;
 }
 
 export interface ReviewListResponse {

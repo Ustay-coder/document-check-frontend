@@ -83,7 +83,7 @@ export default function DashboardPage() {
                   {r.result?.summary?.total_docs ?? "-"}
                 </TableCell>
                 <TableCell className="text-sm text-muted-foreground">
-                  {"-"}
+                  {new Date(r.created_at).toLocaleDateString()}
                 </TableCell>
                 <TableCell>
                   {r.usage ? `$${r.usage.estimated_cost_usd.toFixed(3)}` : "-"}
