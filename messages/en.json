@@ -39,6 +39,11 @@
       "files": "Files",
       "date": "Date",
       "cost": "Cost"
+    },
+    "pagination": {
+      "showing": "{start}-{end} of {total}",
+      "previous": "Previous",
+      "next": "Next"
     }
   },
   "upload": {

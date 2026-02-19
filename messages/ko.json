@@ -39,6 +39,11 @@
       "files": "파일 수",
       "date": "날짜",
       "cost": "비용"
+    },
+    "pagination": {
+      "showing": "{start}-{end} / {total}건",
+      "previous": "이전",
+      "next": "다음"
     }
   },
   "upload": {

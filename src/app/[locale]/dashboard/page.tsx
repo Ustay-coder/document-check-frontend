@@ -15,6 +15,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+  PaginationEllipsis,
+} from "@/components/ui/pagination";
+
+const PAGE_SIZE = 10;
 
 const STATUS_VARIANT: Record<string, "default" | "secondary" | "destructive" | "outline"> = {
   pending: "outline",
@@ -31,14 +42,19 @@ export default function DashboardPage() {
   const [reviews, setReviews] = useState<ReviewStatusResponse[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+
+  const totalPages = Math.ceil(total / PAGE_SIZE);
 
   useEffect(() => {
-    api.listReviews(50, 0).then((data) => {
+    setLoading(true);
+    const offset = (page - 1) * PAGE_SIZE;
+    api.listReviews(PAGE_SIZE, offset).then((data) => {
       setReviews(data.reviews);
       setTotal(data.total);
       setLoading(false);
     }).catch(() => setLoading(false));
-  }, []);
+  }, [page]);
 
   return (
     <div>
@@ -54,6 +70,7 @@ export default function DashboardPage() {
       ) : reviews.length === 0 ? (
         <p className="text-muted-foreground">{t("dashboard.noReviews")}</p>
       ) : (
+        <>
         <Table>
           <TableHeader>
             <TableRow>
@@ -92,6 +109,59 @@ export default function DashboardPage() {
             ))}
           </TableBody>
         </Table>
+
+        {totalPages > 1 && (
+          <div className="mt-4 flex items-center justify-between">
+            <p className="text-sm text-muted-foreground">
+              {t("dashboard.pagination.showing", {
+                start: (page - 1) * PAGE_SIZE + 1,
+                end: Math.min(page * PAGE_SIZE, total),
+                total,
+              })}
+            </p>
+            <Pagination className="mx-0 w-auto">
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious
+                    onClick={() => setPage((p) => Math.max(1, p - 1))}
+                    className={page <= 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                  />
+                </PaginationItem>
+                {Array.from({ length: totalPages }, (_, i) => i + 1)
+                  .filter((p) => p === 1 || p === totalPages || Math.abs(p - page) <= 1)
+                  .reduce<(number | "ellipsis")[]>((acc, p, idx, arr) => {
+                    if (idx > 0 && p - (arr[idx - 1] as number) > 1) acc.push("ellipsis");
+                    acc.push(p);
+                    return acc;
+                  }, [])
+                  .map((item, idx) =>
+                    item === "ellipsis" ? (
+                      <PaginationItem key={`ellipsis-${idx}`}>
+                        <PaginationEllipsis />
+                      </PaginationItem>
+                    ) : (
+                      <PaginationItem key={item}>
+                        <PaginationLink
+                          isActive={item === page}
+                          onClick={() => setPage(item)}
+                          className="cursor-pointer"
+                        >
+                          {item}
+                        </PaginationLink>
+                      </PaginationItem>
+                    )
+                  )}
+                <PaginationItem>
+                  <PaginationNext
+                    onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                    className={page >= totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          </div>
+        )}
+        </>
       )}
     </div>
   );
