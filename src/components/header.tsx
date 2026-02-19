@@ -17,6 +17,13 @@ export function Header({ locale }: { locale: string }) {
           {t("common.appName")}
         </Link>
         <div className="flex items-center gap-2">
+          {user && (
+            <Link href={`/${locale}/settings/rule-templates`}>
+              <Button variant="ghost" size="sm">
+                {t("settings.ruleTemplates.title")}
+              </Button>
+            </Link>
+          )}
           <LocaleSwitcher locale={locale} />
           {user && (
             <>

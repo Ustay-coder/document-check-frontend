@@ -7,6 +7,8 @@ import type {
   ReviewListResponse,
   ChatResponse,
   TemplateResponse,
+  TemplateCreateRequest,
+  TemplateUpdateRequest,
 } from "./types";
 
 class ApiError extends Error {
@@ -136,6 +138,30 @@ export const api = {
   // Templates
   listTemplates() {
     return request<TemplateResponse[]>("/api/rule-templates");
+  },
+
+  getTemplate(templateId: string) {
+    return request<TemplateResponse>(`/api/rule-templates/${templateId}`);
+  },
+
+  createTemplate(data: TemplateCreateRequest) {
+    return request<TemplateResponse>("/api/rule-templates", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  },
+
+  updateTemplate(templateId: string, data: TemplateUpdateRequest) {
+    return request<TemplateResponse>(`/api/rule-templates/${templateId}`, {
+      method: "PUT",
+      body: JSON.stringify(data),
+    });
+  },
+
+  deleteTemplate(templateId: string) {
+    return request<Record<string, never>>(`/api/rule-templates/${templateId}`, {
+      method: "DELETE",
+    });
   },
 
   // Health

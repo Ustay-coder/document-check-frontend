@@ -115,6 +115,12 @@ export interface ChatResponse {
   usage: Usage | null;
 }
 
+// Custom Rules
+export interface CustomChecklist {
+  doc_type: string;
+  checklist_md: string;
+}
+
 // Templates
 export interface TemplateResponse {
   id: string;
@@ -123,4 +129,16 @@ export interface TemplateResponse {
   rules: Record<string, unknown>;
   created_at: string;
   updated_at: string;
+}
+
+export interface TemplateCreateRequest {
+  name: string;
+  description?: string | null;
+  rules: Record<string, unknown>;
+}
+
+export interface TemplateUpdateRequest {
+  name?: string | null;
+  description?: string | null;
+  rules?: Record<string, unknown> | null;
 }
